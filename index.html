@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excel函数速查表 · 免费查200+常用函数 | 白洁</title>
+<meta name="description" content="免费在线Excel函数速查：VLOOKUP、SUMIF、INDEX+MATCH、IF、COUNTIF等最常用函数语法与示例。附200+函数完整手册下载。">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;color:#2c3e50;line-height:1.7}
+  .hero{background:linear-gradient(135deg,#1a5e2e,#2e8b57);color:#fff;padding:52px 20px 44px;text-align:center}
+  .hero h1{font-size:30px;margin-bottom:10px}
+  .hero p{font-size:15px;opacity:.92;max-width:640px;margin:0 auto}
+  .cta{display:inline-block;margin-top:22px;background:#f4b860;color:#23272e;font-weight:700;font-size:16px;padding:13px 30px;border-radius:30px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+  .cta:hover{background:#ffce7a}
+  .container{max-width:880px;margin:0 auto;padding:30px 16px 70px}
+  .tip{background:#fff8e8;border:1px solid #f0d9a8;border-radius:10px;padding:14px 18px;font-size:14px;color:#7a5b1c;margin-bottom:26px}
+  .fn{border-radius:12px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+  .fn summary{background:#fff;padding:15px 20px;cursor:pointer;font-weight:600;font-size:16px;list-style:none;border-left:5px solid #2e8b57;display:flex;justify-content:space-between;align-items:center}
+  .fn summary::-webkit-details-marker{display:none}
+  .fn summary .tag{font-size:12px;background:#eaf6ee;color:#1a5e2e;padding:3px 10px;border-radius:20px;font-weight:500}
+  .fn .body{background:#fafcfb;padding:16px 22px;border-top:1px dashed #dce8e0}
+  .fn code{background:#eef2ef;padding:2px 8px;border-radius:5px;font-size:14px;color:#c0392b}
+  .fn .ex{background:#fff;border:1px solid #e3e9e5;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:14px;color:#555}
+  .bottom-cta{background:linear-gradient(135deg,#23272e,#4a3b1a);color:#fff;border-radius:16px;padding:34px 28px;text-align:center;margin-top:40px}
+  .bottom-cta h2{font-size:22px;margin-bottom:8px}
+  .bottom-cta p{font-size:14px;color:#cfd6e0;margin-bottom:18px}
+  .price{color:#f4b860;font-size:26px;font-weight:800}
+  .strike{text-decoration:line-through;color:#9aa4b2;font-size:16px;font-weight:400}
+  .btn-buy{display:inline-block;background:#f4b860;color:#23272e;font-weight:800;font-size:17px;padding:14px 42px;border-radius:30px;text-decoration:none;box-shadow:0 4px 16px rgba(244,184,96,.35)}
+  .btn-buy:hover{background:#ffce7a}
+  .faq{max-width:720px;margin:30px auto 0}
+  .faq h3{font-size:16px;margin:16px 0 6px;color:#1a5e2e}
+  .faq p{font-size:14px;color:#666}
+  .foot{text-align:center;font-size:12px;color:#999;padding:20px}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>📘 Excel 函数速查表（免费在线版）</h1>
+  <p>输入函数名想不起来的场景，打开这一页就够了。覆盖 VLOOKUP、SUMIFS、INDEX+MATCH 等 200+ 常用函数，附真实工作案例。</p>
+  <a class="cta" href="#buy">👇 免费速查，想看完整版点这里</a>
+</div>
+
+<div class="container">
+  <div class="tip">💡 这是网页免费版，只放出 10 个最高频函数。完整版 200+ 函数手册（含实战案例、速查总表）见文末，¥9.9 一次买断。</div>
+
+  <details class="fn" open>
+    <summary>VLOOKUP 垂直查找 <span class="tag">最高频</span></summary>
+    <div class="body">
+      <p>作用：按某列的值，从表格中查找并返回同行另一列的数据。</p>
+      <p>语法：<code>=VLOOKUP(查找值, 表格区域, 返回列序号, 精确匹配0/近似1)</code></p>
+      <div class="ex">例：根据员工工号查姓名 → <code>=VLOOKUP(A2, 员工表!$A$1:$C$100, 2, 0)</code></div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>XLOOKUP 新一代查找 <span class="tag">Office365/新WPS</span></summary>
+    <div class="body">
+      <p>作用：VLOOKUP 的升级版，可向左查、支持多条件、找不到可自定义提示。</p>
+      <p>语法：<code>=XLOOKUP(查找值, 查找列, 返回列, 未找到提示)</code></p>
+      <div class="ex">例：<code>=XLOOKUP(A2, B:B, A:A, "无此人")</code> —— 向左查找也没问题</div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>INDEX + MATCH 组合 <span class="tag">万能查找</span></summary>
+    <div class="body">
+      <p>作用：比 VLOOKUP 更灵活的查找组合，任意方向、不影响原表结构。</p>
+      <p>语法：<code>=INDEX(返回区域, MATCH(查找值, 查找列, 0))</code></p>
+      <div class="ex">例：<code>=INDEX(C:C, MATCH(A2, B:B, 0))</code> —— 按 B 列值返回 C 列对应行</div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>SUMIF / SUMIFS 条件求和 <span class="tag">财务必备</span></summary>
+    <div class="body">
+      <p>作用：按一个或多个条件对区域求和。</p>
+      <p>语法：<code>=SUMIFS(求和区域, 条件区域1, 条件1, 条件区域2, 条件2)</code></p>
+      <div class="ex">例：统计某部门 7 月销售额 → <code>=SUMIFS(销售额列, 部门列, "销售部", 月份列, "7月")</code></div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>IF 逻辑判断 <span class="tag">入门必会</span></summary>
+    <div class="body">
+      <p>作用：条件成立返回一个值，否则返回另一个值。</p>
+      <p>语法：<code>=IF(条件, 成立时, 不成立时)</code></p>
+      <div class="ex">例：业绩达标判断 → <code>=IF(B2>=100000, "达标", "未达标")</code></div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>COUNTIF / COUNTIFS 条件计数</summary>
+    <div class="body">
+      <p>作用：统计满足条件的单元格个数。</p>
+      <p>语法：<code>=COUNTIF(区域, 条件)</code></p>
+      <div class="ex">例：统计迟到次数 → <code>=COUNTIF(C:C, "迟到")</code></div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>TEXT 文本格式化 <span class="tag">日期/数字美化</span></summary>
+    <div class="body">
+      <p>作用：把数字、日期转成指定文本格式。</p>
+      <p>语法：<code>=TEXT(值, "格式代码")</code></p>
+      <div class="ex">例：日期转"2025年8月1日" → <code>=TEXT(A2, "yyyy年m月d日")</code>；转星期 → <code>=TEXT(A2,"aaaa")</code></div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>SUBSTITUTE 替换指定文本</summary>
+    <div class="body">
+      <p>作用：把单元格里某个指定字符/词全部替换掉（比查找替换更灵活）。</p>
+      <p>语法：<code>=SUBSTITUTE(原文本, 旧文本, 新文本)</code></p>
+      <div class="ex">例：去掉手机号空格 → <code>=SUBSTITUTE(A2, " ", "")</code></div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>ROUND / ROUNDUP / ROUNDDOWN 四舍五入</summary>
+    <div class="body">
+      <p>作用：控制小数位数，财务对账常用。</p>
+      <p>语法：<code>=ROUND(数字, 小数位数)</code></p>
+      <div class="ex">例：保留2位 → <code>=ROUND(A2*0.13, 2)</code></div>
+    </div>
+  </details>
+
+  <details class="fn">
+    <summary>IFERROR 错误屏蔽 <span class="tag">表格不显#N/A</span></summary>
+    <div class="body">
+      <p>作用：公式出错时显示指定内容，而不是难看的 #N/A。</p>
+      <p>语法：<code>=IFERROR(原公式, 出错时显示)</code></p>
+      <div class="ex">例：<code>=IFERROR(VLOOKUP(A2,B:C,2,0), "未找到")</code></div>
+    </div>
+  </details>
+
+  <div class="bottom-cta" id="buy">
+    <h2>想要 200+ 个函数全部速查？</h2>
+    <p>这份《Excel函数速查手册》包含 9 大章节、200+ 常用函数、每个函数都有语法拆解 + 真实工作案例 + 完整速查总表，一次付费永久使用。</p>
+    <p><span class="price">¥9.9</span> <span class="strike">原价 ¥29.9</span></p>
+    <a class="btn-buy" href="http://82.157.101.183:8088/白洁/web/goods/pay-1785643231981-Excel函数速查手册200常用函数实战案例.html">立即购买完整手册 →</a>
+    <p style="font-size:12px;color:#9aa4b2;margin-top:14px">付款后立即发送到邮箱，支持永久回看 · 内容不满意可退款</p>
+  </div>
+
+  <div class="faq">
+    <h3>Q：付款后多久能收到？</h3>
+    <p>A：付款成功系统自动发送到你的邮箱，通常几分钟内到账，若未收到可回信联系。</p>
+    <h3>Q：适合什么版本 Excel？</h3>
+    <p>A：兼容 Excel 2010~2021、Office 365、WPS 表格，函数说明均标注版本差异。</p>
+    <h3>Q：真的只有 9.9 吗？</h3>
+    <p>A：是的，一次买断，后续版本更新免费获取。</p>
+  </div>
+</div>
+
+<div class="foot">© 白洁 · Excel函数速查手册 · 内容如有错误欢迎指正</div>
+</body>
+</html>
