@@ -3,156 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Excel函数速查表 · 免费查200+常用函数 | 白洁</title>
-<meta name="description" content="免费在线Excel函数速查：VLOOKUP、SUMIF、INDEX+MATCH、IF、COUNTIF等最常用函数语法与示例。附200+函数完整手册下载。">
+<title>Excel函数速查 - 免费在线工具</title>
+<meta name="description" content="免费在线Excel函数速查工具：输入函数名或关键词，立即查看语法、说明和实战示例。覆盖VLOOKUP、SUMIFS、INDEX+MATCH等200+常用函数。">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;color:#2c3e50;line-height:1.7}
-  .hero{background:linear-gradient(135deg,#1a5e2e,#2e8b57);color:#fff;padding:52px 20px 44px;text-align:center}
-  .hero h1{font-size:30px;margin-bottom:10px}
-  .hero p{font-size:15px;opacity:.92;max-width:640px;margin:0 auto}
-  .cta{display:inline-block;margin-top:22px;background:#f4b860;color:#23272e;font-weight:700;font-size:16px;padding:13px 30px;border-radius:30px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
-  .cta:hover{background:#ffce7a}
-  .container{max-width:880px;margin:0 auto;padding:30px 16px 70px}
-  .tip{background:#fff8e8;border:1px solid #f0d9a8;border-radius:10px;padding:14px 18px;font-size:14px;color:#7a5b1c;margin-bottom:26px}
-  .fn{border-radius:12px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-  .fn summary{background:#fff;padding:15px 20px;cursor:pointer;font-weight:600;font-size:16px;list-style:none;border-left:5px solid #2e8b57;display:flex;justify-content:space-between;align-items:center}
-  .fn summary::-webkit-details-marker{display:none}
-  .fn summary .tag{font-size:12px;background:#eaf6ee;color:#1a5e2e;padding:3px 10px;border-radius:20px;font-weight:500}
-  .fn .body{background:#fafcfb;padding:16px 22px;border-top:1px dashed #dce8e0}
-  .fn code{background:#eef2ef;padding:2px 8px;border-radius:5px;font-size:14px;color:#c0392b}
-  .fn .ex{background:#fff;border:1px solid #e3e9e5;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:14px;color:#555}
-  .bottom-cta{background:linear-gradient(135deg,#23272e,#4a3b1a);color:#fff;border-radius:16px;padding:34px 28px;text-align:center;margin-top:40px}
-  .bottom-cta h2{font-size:22px;margin-bottom:8px}
-  .bottom-cta p{font-size:14px;color:#cfd6e0;margin-bottom:18px}
-  .price{color:#f4b860;font-size:26px;font-weight:800}
-  .strike{text-decoration:line-through;color:#9aa4b2;font-size:16px;font-weight:400}
-  .btn-buy{display:inline-block;background:#f4b860;color:#23272e;font-weight:800;font-size:17px;padding:14px 42px;border-radius:30px;text-decoration:none;box-shadow:0 4px 16px rgba(244,184,96,.35)}
-  .btn-buy:hover{background:#ffce7a}
-  .faq{max-width:720px;margin:30px auto 0}
-  .faq h3{font-size:16px;margin:16px 0 6px;color:#1a5e2e}
-  .faq p{font-size:14px;color:#666}
-  .foot{text-align:center;font-size:12px;color:#999;padding:20px}
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:#f5f7fa; color:#2c3e50; }
+  .hero { background:linear-gradient(135deg,#1a5e2e 0%,#2e8b57 100%); color:#fff; padding:48px 20px 40px; text-align:center; }
+  .hero h1 { font-size:28px; margin-bottom:10px; }
+  .hero p { font-size:15px; opacity:.9; }
+  .search-wrap { max-width:560px; margin:24px auto 0; }
+  .search-wrap input { width:100%; padding:14px 18px; font-size:16px; border:none; border-radius:30px; outline:none; box-shadow:0 4px 15px rgba(0,0,0,.2); }
+  .container { max-width:900px; margin:0 auto; padding:28px 16px 60px; }
+  .count-bar { font-size:13px; color:#7f8c8d; margin-bottom:14px; }
+  .fn-card { background:#fff; border-radius:12px; padding:18px 20px; margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,.06); cursor:pointer; transition:.2s; border-left:4px solid #2e8b57; }
+  .fn-card:hover { box-shadow:0 4px 16px rgba(0,0,0,.12); transform:translateY(-1px); }
+  .fn-card .fn-head { display:flex; justify-content:space-between; align-items:center; }
+  .fn-card .fn-name { font-size:18px; font-weight:700; color:#1a5e2e; }
+  .fn-card .fn-cat { font-size:12px; background:#e8f5e9; color:#2e7d32; padding:3px 10px; border-radius:12px; }
+  .fn-card .fn-syntax { margin-top:10px; font-family:Consolas,monospace; font-size:14px; background:#f0f4f1; padding:10px 14px; border-radius:8px; color:#0d4f2a; display:none; }
+  .fn-card .fn-desc { margin-top:8px; font-size:14px; color:#555; display:none; }
+  .fn-card .fn-example { margin-top:8px; font-size:13px; color:#888; display:none; }
+  .fn-card.open .fn-syntax, .fn-card.open .fn-desc, .fn-card.open .fn-example { display:block; }
+  .cta { background:linear-gradient(135deg,#1a5e2e,#2e8b57); color:#fff; border-radius:14px; padding:30px; margin-top:36px; text-align:center; }
+  .cta h2 { font-size:22px; margin-bottom:8px; }
+  .cta p { font-size:14px; opacity:.92; margin-bottom:18px; }
+  .cta a { display:inline-block; background:#fff; color:#1a5e2e; font-weight:700; padding:12px 32px; border-radius:30px; text-decoration:none; font-size:16px; }
+  .footer { text-align:center; font-size:12px; color:#999; padding:20px; }
 </style>
 </head>
 <body>
 <div class="hero">
-  <h1>📘 Excel 函数速查表（免费在线版）</h1>
-  <p>输入函数名想不起来的场景，打开这一页就够了。覆盖 VLOOKUP、SUMIFS、INDEX+MATCH 等 200+ 常用函数，附真实工作案例。</p>
-  <a class="cta" href="#buy">👇 免费速查，想看完整版点这里</a>
+  <h1>📊 Excel 函数速查工具</h1>
+  <p>输入函数名或关键词，秒查语法 + 实战示例（免费）</p>
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="试试输入：VLOOKUP / 求和 / 提取 ..." autocomplete="off">
+  </div>
 </div>
-
 <div class="container">
-  <div class="tip">💡 这是网页免费版，只放出 10 个最高频函数。完整版 200+ 函数手册（含实战案例、速查总表）见文末，¥9.9 一次买断。</div>
-
-  <details class="fn" open>
-    <summary>VLOOKUP 垂直查找 <span class="tag">最高频</span></summary>
-    <div class="body">
-      <p>作用：按某列的值，从表格中查找并返回同行另一列的数据。</p>
-      <p>语法：<code>=VLOOKUP(查找值, 表格区域, 返回列序号, 精确匹配0/近似1)</code></p>
-      <div class="ex">例：根据员工工号查姓名 → <code>=VLOOKUP(A2, 员工表!$A$1:$C$100, 2, 0)</code></div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>XLOOKUP 新一代查找 <span class="tag">Office365/新WPS</span></summary>
-    <div class="body">
-      <p>作用：VLOOKUP 的升级版，可向左查、支持多条件、找不到可自定义提示。</p>
-      <p>语法：<code>=XLOOKUP(查找值, 查找列, 返回列, 未找到提示)</code></p>
-      <div class="ex">例：<code>=XLOOKUP(A2, B:B, A:A, "无此人")</code> —— 向左查找也没问题</div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>INDEX + MATCH 组合 <span class="tag">万能查找</span></summary>
-    <div class="body">
-      <p>作用：比 VLOOKUP 更灵活的查找组合，任意方向、不影响原表结构。</p>
-      <p>语法：<code>=INDEX(返回区域, MATCH(查找值, 查找列, 0))</code></p>
-      <div class="ex">例：<code>=INDEX(C:C, MATCH(A2, B:B, 0))</code> —— 按 B 列值返回 C 列对应行</div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>SUMIF / SUMIFS 条件求和 <span class="tag">财务必备</span></summary>
-    <div class="body">
-      <p>作用：按一个或多个条件对区域求和。</p>
-      <p>语法：<code>=SUMIFS(求和区域, 条件区域1, 条件1, 条件区域2, 条件2)</code></p>
-      <div class="ex">例：统计某部门 7 月销售额 → <code>=SUMIFS(销售额列, 部门列, "销售部", 月份列, "7月")</code></div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>IF 逻辑判断 <span class="tag">入门必会</span></summary>
-    <div class="body">
-      <p>作用：条件成立返回一个值，否则返回另一个值。</p>
-      <p>语法：<code>=IF(条件, 成立时, 不成立时)</code></p>
-      <div class="ex">例：业绩达标判断 → <code>=IF(B2>=100000, "达标", "未达标")</code></div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>COUNTIF / COUNTIFS 条件计数</summary>
-    <div class="body">
-      <p>作用：统计满足条件的单元格个数。</p>
-      <p>语法：<code>=COUNTIF(区域, 条件)</code></p>
-      <div class="ex">例：统计迟到次数 → <code>=COUNTIF(C:C, "迟到")</code></div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>TEXT 文本格式化 <span class="tag">日期/数字美化</span></summary>
-    <div class="body">
-      <p>作用：把数字、日期转成指定文本格式。</p>
-      <p>语法：<code>=TEXT(值, "格式代码")</code></p>
-      <div class="ex">例：日期转"2025年8月1日" → <code>=TEXT(A2, "yyyy年m月d日")</code>；转星期 → <code>=TEXT(A2,"aaaa")</code></div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>SUBSTITUTE 替换指定文本</summary>
-    <div class="body">
-      <p>作用：把单元格里某个指定字符/词全部替换掉（比查找替换更灵活）。</p>
-      <p>语法：<code>=SUBSTITUTE(原文本, 旧文本, 新文本)</code></p>
-      <div class="ex">例：去掉手机号空格 → <code>=SUBSTITUTE(A2, " ", "")</code></div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>ROUND / ROUNDUP / ROUNDDOWN 四舍五入</summary>
-    <div class="body">
-      <p>作用：控制小数位数，财务对账常用。</p>
-      <p>语法：<code>=ROUND(数字, 小数位数)</code></p>
-      <div class="ex">例：保留2位 → <code>=ROUND(A2*0.13, 2)</code></div>
-    </div>
-  </details>
-
-  <details class="fn">
-    <summary>IFERROR 错误屏蔽 <span class="tag">表格不显#N/A</span></summary>
-    <div class="body">
-      <p>作用：公式出错时显示指定内容，而不是难看的 #N/A。</p>
-      <p>语法：<code>=IFERROR(原公式, 出错时显示)</code></p>
-      <div class="ex">例：<code>=IFERROR(VLOOKUP(A2,B:C,2,0), "未找到")</code></div>
-    </div>
-  </details>
-
-  <div class="bottom-cta" id="buy">
-    <h2>想要 200+ 个函数全部速查？</h2>
-    <p>这份《Excel函数速查手册》包含 9 大章节、200+ 常用函数、每个函数都有语法拆解 + 真实工作案例 + 完整速查总表，一次付费永久使用。</p>
-    <p><span class="price">¥9.9</span> <span class="strike">原价 ¥29.9</span></p>
-    <a class="btn-buy" href="http://82.157.101.183:8088/白洁/web/goods/pay-1785643231981-Excel函数速查手册200常用函数实战案例.html">立即购买完整手册 →</a>
-    <p style="font-size:12px;color:#9aa4b2;margin-top:14px">付款后立即发送到邮箱，支持永久回看 · 内容不满意可退款</p>
-  </div>
-
-  <div class="faq">
-    <h3>Q：付款后多久能收到？</h3>
-    <p>A：付款成功系统自动发送到你的邮箱，通常几分钟内到账，若未收到可回信联系。</p>
-    <h3>Q：适合什么版本 Excel？</h3>
-    <p>A：兼容 Excel 2010~2021、Office 365、WPS 表格，函数说明均标注版本差异。</p>
-    <h3>Q：真的只有 9.9 吗？</h3>
-    <p>A：是的，一次买断，后续版本更新免费获取。</p>
+  <div class="count-bar">共收录 <span id="total">0</span> 个常用函数 · 点击卡片展开详情</div>
+  <div id="list"></div>
+  <div class="cta">
+    <h2>想要全部 200+ 函数？</h2>
+    <p>完整版《Excel函数速查手册》含 9 章深度讲解 + 速查总表 + 实战案例，每个函数都有"语法+示例+常见坑"，照着抄就能用。</p>
+    <a href="http://82.157.101.183:8088/白洁/web/goods/pay-1785643231981-Excel函数速查手册200常用函数实战案例.html" target="_blank">📘 查看完整版手册（￥9.9）</a>
   </div>
 </div>
-
-<div class="foot">© 白洁 · Excel函数速查手册 · 内容如有错误欢迎指正</div>
+<div class="footer">Excel函数速查 · 免费在线工具 · 收录常用函数，持续更新中</div>
+<script>
+const FNS = [
+{name:"VLOOKUP",cat:"查找引用",syntax:"=VLOOKUP(查找值, 区域, 返回列号, 0)",desc:"在区域第一列查找值，返回同一行指定列的内容。第4参数填0表示精确匹配。",example:"=VLOOKUP(A2, 员工表!$A$2:$E$100, 3, 0)  → 按工号查姓名"},
+{name:"HLOOKUP",cat:"查找引用",syntax:"=HLOOKUP(查找值, 区域, 返回行号, 0)",desc:"按行查找：在区域第一行查找值，返回同一列指定行的内容。",example:"=HLOOKUP(B1, $A$1:$Z$10, 2, 0)"},
+{name:"INDEX",cat:"查找引用",syntax:"=INDEX(区域, 行号, [列号])",desc:"返回区域中指定行列交叉处的值，常与MATCH搭配。",example:"=INDEX(B2:D10, 3, 2)  → 返回区域第3行第2列"},
+{name:"MATCH",cat:"查找引用",syntax:"=MATCH(查找值, 区域, 0)",desc:"返回查找值在区域中的位置序号。第3参数0=精确匹配。",example:"=MATCH(\"张三\", A2:A100, 0)  → 返回张三所在行号"},
+{name:"SUM",cat:"数学统计",syntax:"=SUM(数值1, [数值2], ...)",desc:"对指定数值或区域求和。",example:"=SUM(A1:A100)  → 求A列总和"},
+{name:"SUMIF",cat:"数学统计",syntax:"=SUMIF(条件区域, 条件, [求和区域])",desc:"按单个条件对符合条件的单元格求和。",example:"=SUMIF(B2:B100,\"财务部\",C2:C100)  → 财务部薪资合计"},
+{name:"SUMIFS",cat:"数学统计",syntax:"=SUMIFS(求和区域, 条件区域1, 条件1, [条件区域2, 条件2]...)",desc:"按多个条件求和，支持多条件筛选。",example:"=SUMIFS(C2:C100,B2:B100,\"财务部\",D2:D100,\">5000\")"},
+{name:"COUNT",cat:"数学统计",syntax:"=COUNT(区域)",desc:"统计区域中数值型单元格的个数。",example:"=COUNT(A1:A100)"},
+{name:"COUNTA",cat:"数学统计",syntax:"=COUNTA(区域)",desc:"统计区域中非空单元格个数（含文本）。",example:"=COUNTA(A1:A100)  → 有数据的行数"},
+{name:"COUNTIF",cat:"数学统计",syntax:"=COUNTIF(区域, 条件)",desc:"按条件统计个数。",example:"=COUNTIF(B2:B100,\"财务部\")"},
+{name:"COUNTIFS",cat:"数学统计",syntax:"=COUNTIFS(区域1, 条件1, [区域2, 条件2]...)",desc:"多条件统计个数。",example:"=COUNTIFS(B2:B100,\"财务部\",D2:D100,\">5000\")"},
+{name:"AVERAGE",cat:"数学统计",syntax:"=AVERAGE(数值1, [数值2]...)",desc:"求平均值。",example:"=AVERAGE(A1:A100)"},
+{name:"MAX / MIN",cat:"数学统计",syntax:"=MAX(区域)  =MIN(区域)",desc:"求区域最大值/最小值。",example:"=MAX(A1:A100)  → 最高分"},
+{name:"IF",cat:"逻辑函数",syntax:"=IF(条件, 真值, 假值)",desc:"条件判断，满足返回真值否则返回假值。",example:"=IF(B2>=60,\"及格\",\"不及格\")"},
+{name:"IFERROR",cat:"逻辑函数",syntax:"=IFERROR(公式, 出错时返回)",desc:"公式出错时返回指定值，避免显示#N/A等错误。",example:"=IFERROR(VLOOKUP(A2,B:C,2,0),\"未找到\")"},
+{name:"AND / OR",cat:"逻辑函数",syntax:"=AND(条件1, 条件2)  =OR(条件1, 条件2)",desc:"多个条件同时满足(AND)/任一满足(OR)。",example:"=IF(AND(B2>60,C2=\"男\"),\"符合\",\"\")"},
+{name:"LEFT",cat:"文本函数",syntax:"=LEFT(文本, 位数)",desc:"从文本左侧提取指定位数。",example:"=LEFT(A2,3)  → 取前3个字符"},
+{name:"RIGHT",cat:"文本函数",syntax:"=RIGHT(文本, 位数)",desc:"从文本右侧提取指定位数。",example:"=RIGHT(A2,4)  → 取后4位"},
+{name:"MID",cat:"文本函数",syntax:"=MID(文本, 起始位, 位数)",desc:"从指定位置提取中间字符。",example:"=MID(A2,4,3)  → 从第4位取3个字符"},
+{name:"LEN",cat:"文本函数",syntax:"=LEN(文本)",desc:"返回文本长度（字符数）。",example:"=LEN(A2)  → 身份证号长度"},
+{name:"FIND",cat:"文本函数",syntax:"=FIND(要找的, 在哪找, [起始位])",desc:"查找字符在文本中的位置（区分大小写）。",example:"=FIND(\"@\",A2)  → @在邮箱中的位置"},
+{name:"TRIM",cat:"文本函数",syntax:"=TRIM(文本)",desc:"清除文本首尾多余空格。",example:"=TRIM(A2)  → 清理后VLOOKUP不再报错"},
+{name:"SUBSTITUTE",cat:"文本函数",syntax:"=SUBSTITUTE(文本, 旧文本, 新文本, [替换第几个])",desc:"替换文本中指定内容。",example:"=SUBSTITUTE(A2,\"-\",\"\")  → 去掉横杠"},
+{name:"TEXT",cat:"文本函数",syntax:"=TEXT(数值, 格式)",desc:"按指定格式将数值转成文本。",example:"=TEXT(A2,\"yyyy年mm月dd日\")"},
+{name:"TEXTJOIN",cat:"文本函数",syntax:"=TEXTJOIN(分隔符, 忽略空值, 区域)",desc:"将区域内文本用分隔符合并成一个字符串。",example:"=TEXTJOIN(\",\",TRUE,A1:A10)"},
+{name:"DATE",cat:"日期时间",syntax:"=DATE(年, 月, 日)",desc:"根据年月日构造日期。",example:"=DATE(2025,12,31)"},
+{name:"TODAY",cat:"日期时间",syntax:"=TODAY()",desc:"返回今天的日期（随系统更新）。",example:"=TODAY()  → 2025-08-02"},
+{name:"DATEDIF",cat:"日期时间",syntax:"=DATEDIF(开始日期, 结束日期, 单位)",desc:"计算两个日期之差。单位：Y年/M月/D日。",example:"=DATEDIF(A2,TODAY(),\"Y\")  → 年龄"},
+{name:"ROUND",cat:"数学统计",syntax:"=ROUND(数值, 小数位)",desc:"四舍五入到指定小数位。",example:"=ROUND(3.14159,2)  → 3.14"},
+{name:"ROUNDUP / ROUNDDOWN",cat:"数学统计",syntax:"=ROUNDUP(数值, 小数位)  =ROUNDDOWN(数值, 小数位)",desc:"向上/向下舍入。",example:"=ROUNDUP(3.1,0)  → 4"},
+{name:"INT",cat:"数学统计",syntax:"=INT(数值)",desc:"向下取整。",example:"=INT(3.9)  → 3"},
+{name:"MOD",cat:"数学统计",syntax:"=MOD(被除数, 除数)",desc:"取余数。",example:"=MOD(10,3)  → 1"},
+{name:"ABS",cat:"数学统计",syntax:"=ABS(数值)",desc:"取绝对值。",example:"=ABS(-5)  → 5"},
+{name:"SUMPRODUCT",cat:"数学统计",syntax:"=SUMPRODUCT(区域1, 区域2)",desc:"对应元素相乘后求和，常用于多条件计数。",example:"=SUMPRODUCT((B2:B100=\"财务部\")*(C2:C100>5000))"},
+{name:"OFFSET",cat:"查找引用",syntax:"=OFFSET(基点, 下移行, 右移列, [高度], [宽度])",desc:"返回偏移后的区域引用，常用于动态区域。",example:"=SUM(OFFSET(A1,0,0,10,1))  → A1向下10行求和"},
+{name:"INDIRECT",cat:"查找引用",syntax:"=INDIRECT(单元格地址文本)",desc:"把文本变成真实引用，实现跨表动态引用。",example:"=INDIRECT(\"Sheet2!A1\")"}
+];
+const list = document.getElementById('list');
+const total = document.getElementById('total');
+total.textContent = FNS.length;
+function render(arr){
+  list.innerHTML = arr.map((f,i)=>`
+    <div class="fn-card" onclick="this.classList.toggle('open')">
+      <div class="fn-head">
+        <span class="fn-name">${f.name}</span>
+        <span class="fn-cat">${f.cat}</span>
+      </div>
+      <div class="fn-syntax">${f.syntax}</div>
+      <div class="fn-desc">${f.desc}</div>
+      <div class="fn-example">💡 ${f.example}</div>
+    </div>`).join('');
+}
+render(FNS);
+document.getElementById('search').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  if(!q){ render(FNS); total.textContent = FNS.length; return; }
+  const res = FNS.filter(f => f.name.toLowerCase().includes(q) || f.desc.includes(q) || f.cat.includes(q));
+  render(res); total.textContent = res.length;
+});
+</script>
 </body>
 </html>
